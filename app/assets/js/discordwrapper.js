@@ -20,11 +20,11 @@ exports.initRPC = function(){
         buttons: [
             {
                 label: "Entre em nosso Discord!",
-                url: "https://discord.gg/jornadascobblemon"
+                url: "https://discord.gg/VWYE7GVhEE"
               },
               {
                 label: "Acesse nosso site!",
-                url: "https://loja.jornadascobblemon.com.br"
+                url: "https://fronteirascobblemon.craftingstore.net"
               }
         ],
         instance: false

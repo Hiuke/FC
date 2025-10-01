@@ -368,7 +368,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=JornadasCobblemon')
+            args.push('-Xdock:name=fronteirascobblemon')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'SealCircle.ico'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -419,7 +419,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=JornadasCobblemon')
+            args.push('-Xdock:name=fronteirascobblemon')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'SealCircle.ico'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -521,7 +521,7 @@ class ProcessBuilder {
                             val = args[i].replace(argDiscovery, tempNativePath)
                             break
                         case 'launcher_name':
-                            val = args[i].replace(argDiscovery, 'JornadaCobblemon-Launcher')
+                            val = args[i].replace(argDiscovery, 'FC-Launcher')
                             break
                         case 'launcher_version':
                             val = args[i].replace(argDiscovery, this.launcherVersion)

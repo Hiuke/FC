@@ -2475,35 +2475,44 @@ input:checked + .toggleSwitchSlider:before {
     overflow-y: hidden;
 }
 
-/* Upper content container. */
+/* 1. Container principal da parte de cima */
 #landingContainer > #upper {
-    position: relative;
-    transition: top 2s ease;
-    top: 0px;
+    display: flex;
+    justify-content: space-between; /* Essencial para empurrar o conteúdo para os cantos */
+    align-items: flex-start; /* Alinha os filhos no topo */
+    padding: 20px; /* Espaçamento para não colar nas bordas */
+    box-sizing: border-box;
     height: 77%;
+}
+
+/* 2. Elemento "espaçador" que empurra o resto para a direita */
+#upper > .content-spacer {
+    flex-grow: 1; /* Faz este elemento invisível ocupar todo o espaço disponível */
+}
+
+/* 3. O novo container que agrupa o perfil e os ícones */
+#upper > .sidebar-right-container {
     display: flex;
+    align-items: center; /* Alinha o perfil e os ícones verticalmente */
+    gap: 40px; /* Cria um espaço entre o bloco do perfil e o bloco de ícones */
 }
-#landingContainer > #upper > #left {
-    position: relative;
-    bottom: 0px;
-    height: 100%;
-    width: 33%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: flex-start;
+
+/* 4. Estilo para o perfil (div#left) DENTRO do novo container */
+.sidebar-right-container > #left {
+    /* O conteúdo interno já está em #avatarHero, então não precisa de muito.
+       Se o avatar e o texto ficarem desalinhados, use flex: */
 }
-#landingContainer > #upper > #content {
-    display: inline-flex;
-    width: 70%;
-    height: 100%;
+
+/* 5. Estilo para os ícones (div#right) DENTRO do novo container */
+.sidebar-right-container > #right {
+    /* Não precisa de CSS de posicionamento aqui, o pai já cuida disso */
 }
-#landingContainer > #upper > #right {
-    position: relative;
-    height: 100%;
-    width: 33%;
+
+/* Estilo para o container dos ícones de mídia */
+#mediaContent {
     display: flex;
-    justify-content: flex-end; /* Alinha o contêiner à direita */
-    align-items: flex-start; /* Alinha os itens ao topo */
+    flex-direction: column; /* Coloca os ícones um embaixo do outro */
+    gap: 15px; /* Espaço entre os ícones */
 }
 
 /* Lower content container. */
@@ -2978,7 +2987,7 @@ input:checked + .toggleSwitchSlider:before {
     top: 0; /* Alinha ao topo do contêiner pai */
     right: 0; /* Alinha à direita do contêiner pai */
     height: auto; /* Ajusta a altura conforme necessário */
-    align-items: center; /* Alinha os ícones verticalmente no centro */
+    align-items: flex-end; /* Alinha os ícones verticalmente no centro */
     gap: 10px; /* Espaço entre os ícones */
 }
 
@@ -2987,12 +2996,15 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     flex-direction: column;
     gap: 0.2rem; /* espaçamento entre elementos */
+    align-items: flex-end;
 }
 
 #avatarHero {
     display: flex;
     align-items: center;
     padding-top: 10px;
+    gap: 15px;
+    flex-direction: row-reverse;
 }
 
 /* User profile avatar container. */
@@ -3055,14 +3067,14 @@ input:checked + .toggleSwitchSlider:before {
 /* Social media icon content container. */
 #mediaContent {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end; /* Alinha os ícones à direita */
-    align-items: center; /* Alinha os ícones verticalmente no centro */
-    margin: 0; /* Remove margem para garantir o alinhamento correto */
-    padding: 0; /* Remove padding se houver */
-    width: auto; /* Ajusta a largura conforme o conteúdo */
-    margin-left: 200%;
-    padding-top: 20%; ;
+    flex-direction: column;   /* agora empilha */
+    justify-content: flex-start; /* começa do topo */
+    align-items: center;      /* centraliza os ícones na horizontal */
+    gap: 20px;                /* espaço entre os ícones */
+    margin: 0;    /* remove empurrões laterais */
+    padding-top: 150;
+    padding-right: 97;
+    width: auto;  /* ajusta à largura dos ícones */
 }
 
 /* Social Media Icon division containers. */
@@ -3238,7 +3250,7 @@ input:checked + .toggleSwitchSlider:before {
     height: 100%;
     gap: 0.25rem; /* Espaçamento entre itens */
     margin-top: 4rem;
-    padding-left: 120%;
+    padding-left: 18.5%;
 }
 
 /* Span which displays the player count of the selected server. */
@@ -3438,7 +3450,7 @@ input:checked + .toggleSwitchSlider:before {
     text-transform: uppercase; /* uppercase */
     border: none;
     cursor: pointer;
-    background-color: #064fde; /* bg-[#064fde] */
+    background-color: #bb5400; /* bg-[#064fde] */
     padding-top: 0.6rem; /* py-3 */
     padding-bottom: 0.6rem; /* py-3 */
     padding-left: 4.0rem; /* px-14 */
@@ -3447,13 +3459,13 @@ input:checked + .toggleSwitchSlider:before {
     position: absolute; /* absolute */
     top: -3rem; /* -top-12 */
     left: 50%; /* left-1/2 */
-    transform: translateX(-50%); /* -translate-x-1/2 */
+    transform: translateX(60%); /* -translate-x-1/2 */
     transition: all 0.2s; /* transition-all duration-200 */
     font-family: 'THEBOLDFONT', sans-serif;
 }
 #launch_button:hover,
 #launch_button:focus {
-    box-shadow: 0 0 15px 0 #064fde; /* hover:shadow-[0_0px_30px_0px_#064fde] */
+    box-shadow: 0 0 15px 0 #a34900; /* hover:shadow-[0_0px_30px_0px_#064fde] */
 }
 #launch_button:active {
     color: #c7c7c7;
@@ -4049,3 +4061,4 @@ input:checked + .toggleSwitchSlider:before {
 .rotating {
     animation: rotating 10s linear infinite;
 }
+

@@ -7,9 +7,9 @@ const logger = LoggerUtil.getLogger('ConfigManager')
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 
-const dataPath = path.join(sysRoot, '.jornadascobblemon')
+const dataPath = path.join(sysRoot, '.fronteirascobblemon')
 
-const launcherDir = require('@electron/remote').app.getPath('userData')
+const launcherDir = process.env.CONFIG_DIRECT_PATH || require('@electron/remote').app.getPath('userData')
 
 /**
  * Retrieve the absolute path of the launcher directory.
