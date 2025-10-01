@@ -254,7 +254,7 @@ async function createWindow() {
 
     
     // Fetch the Last-Modified timestamp of the background
-    const imageUrl = 'https://fronteirascobblemon.wstr.fr/images/0.png'
+    const imageUrl = 'https://fronteirascobblemon.wstr.fr/assets/images/0.png'
     const lastModified = await getLastModified(imageUrl)
     const bodyBackgroundImageUrl = `${imageUrl}?v=${lastModified}`
     

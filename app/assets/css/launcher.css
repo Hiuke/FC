@@ -3232,7 +3232,7 @@ input:checked + .toggleSwitchSlider:before {
 .bot_divider {
     height: 25px;
     width: 2px;
-    background: rgba(107, 105, 105, 0.7);
+    background: rgba(107, 105, 105, 0);
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -3249,7 +3249,7 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: center;
     height: 100%;
     gap: 0.25rem; /* Espaçamento entre itens */
-    margin-top: 4rem;
+    margin-top: 4.2rem;
     padding-left: 18.5%;
 }
 
@@ -3446,22 +3446,23 @@ input:checked + .toggleSwitchSlider:before {
 #launch_button {
     margin-top: 2.4rem;
     font-size: 2.0rem; /* text-xl */
-    font-weight: bold; /* font-bold */
+    font-weight: unset; /* font-bold */
     text-transform: uppercase; /* uppercase */
     border: none;
     cursor: pointer;
     background-color: #bb5400; /* bg-[#064fde] */
     padding-top: 0.6rem; /* py-3 */
     padding-bottom: 0.6rem; /* py-3 */
-    padding-left: 4.0rem; /* px-14 */
-    padding-right: 4.0rem; /* px-14 */
-    border-radius: 1rem; /* rounded-xl */
+    padding-left: 3.0rem; /* px-14 */
+    padding-right: 3.0rem; /* px-14 */
+    border-radius: 3rem; /* rounded-xl */
     position: absolute; /* absolute */
-    top: -3rem; /* -top-12 */
+    top: -4rem; /* -top-12 */
     left: 50%; /* left-1/2 */
-    transform: translateX(60%); /* -translate-x-1/2 */
+    transform: translateX(77%); /* -translate-x-1/2 */
     transition: all 0.2s; /* transition-all duration-200 */
-    font-family: 'THEBOLDFONT', sans-serif;
+    font-family: fantasy;
+    font-size-adjust: ch-width 0.72;
 }
 #launch_button:hover,
 #launch_button:focus {
@@ -3473,23 +3474,24 @@ input:checked + .toggleSwitchSlider:before {
 }
 #launch_button:disabled {
     margin-top: 2.4rem;
-    font-size: 1.5rem; /* text-xl */
-    font-weight: bold; /* font-bold */
+    font-size: 2rem; /* text-xl */
+    font-weight: unset; /* font-bold */
     text-transform: uppercase; /* uppercase */
     border: none;
     cursor: default;
-    background-color: #064fde; /* bg-[#064fde] */
+    background-color: #8b3f00; /* bg-[#064fde] */
     padding-top: 0.6rem; /* py-3 */
     padding-bottom: 0.6rem; /* py-3 */
-    padding-left: 4.0rem; /* px-14 */
-    padding-right: 4.0rem; /* px-14 */
-    border-radius: 1rem; /* rounded-xl */
+    padding-left: 1.8rem; /* px-14 */
+    padding-right: 1.8rem; /* px-14 */
+    border-radius: 3rem; /* rounded-xl */
     position: absolute; /* absolute */
-    top: -3rem; /* -top-12 */
+    top: -4rem; /* -top-12 */
     left: 50%; /* left-1/2 */
-    transform: translateX(-50%); /* -translate-x-1/2 */
+    transform: translateX(72%); /* -translate-x-1/2 */
     transition: all 0.2s; /* transition-all duration-200 */
-    font-family: 'THEBOLDFONT', sans-serif;
+    font-family: fantasy;
+    font-size-adjust: ch-width 0.72;
     color: #c7c7c7;
     pointer-events: none;
     white-space: nowrap;
@@ -3516,6 +3518,7 @@ input:checked + .toggleSwitchSlider:before {
     min-width: 53.21px;
     max-width: 53.21px;
     text-align: right;
+    transform: translate(-210px, 27px);
 }
 
 /* Right side of launch details container, displays progress bar and details. */
@@ -3523,6 +3526,7 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform: translate(-240px, 27px);
 }
 
 /* Button which opens the server selection view. */
@@ -3571,7 +3575,7 @@ input:checked + .toggleSwitchSlider:before {
     background-color: transparent;
 }
 #launch_progress[value]::-webkit-progress-value {
-    background-color: #064fde;
+    background-color: #c05b18;
 }
 
 /* Span which displays information about the status of the launch process. */
@@ -4062,3 +4066,60 @@ input:checked + .toggleSwitchSlider:before {
     animation: rotating 10s linear infinite;
 }
 
+/*******************************************************************************
+ *                                                                             *
+ * App Logo Styles                                                             *
+ *                                                                             *
+ ******************************************************************************/
+
+/* Container da logo no canto superior esquerdo */
+#app-logo-container {
+    position: absolute;
+    top: 20px;
+    left: 85px;
+    z-index: 10;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* O efeito FadeIn será herdado automaticamente do app */
+}
+
+/* Elemento da logo */
+#app-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Efeito hover na logo */
+#app-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #app-logo-container {
+        width: 80px;
+        height: 80px;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+/* Versão alternativa com background circular (opcional) */
+#app-logo-container.circular {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+#app-logo-container.circular #app-logo {
+    width: 70%;
+    height: 70%;
+}

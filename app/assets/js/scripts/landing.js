@@ -129,7 +129,7 @@ const handleClickLaunchButton = async function (e) {
 
         // Alterar texto e desativar funcionalidade após todas as operações
         const launchButton = document.getElementById('launch_button');
-        launchButton.innerText = 'DIVIRTA-SE!';
+        launchButton.innerText = 'AGUARDE';
         launchButton.disabled = true;
         launchButton.removeEventListener('click', handleClickLaunchButton);
     } catch(err) {
