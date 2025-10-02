@@ -2494,7 +2494,7 @@ input:checked + .toggleSwitchSlider:before {
 #upper > .sidebar-right-container {
     display: flex;
     align-items: center; /* Alinha o perfil e os ícones verticalmente */
-    gap: 40px; /* Cria um espaço entre o bloco do perfil e o bloco de ícones */
+    gap: 15px; /* Cria um espaço entre o bloco do perfil e o bloco de ícones */
 }
 
 /* 4. Estilo para o perfil (div#left) DENTRO do novo container */
@@ -3009,7 +3009,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* User profile avatar container. */
 #avatarContainer {
-    border-radius: 50%;
+    border-radius: 0.5rem;
     box-sizing: border-box;
     background: rgba(1, 2, 1, 0.5);
     height: 70px;
@@ -3021,6 +3021,7 @@ input:checked + .toggleSwitchSlider:before {
     background-repeat: no-repeat;
     background-size: contain;
     margin-right: 1.7rem;
+    border: 2px solid #dbc4b0;
 }
 
 /* Avatar edit overlay. */
@@ -3041,7 +3042,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 0.5rem;
 }
 #avatarOverlay:hover,
 #avatarOverlay:focus {
@@ -3056,12 +3057,7 @@ input:checked + .toggleSwitchSlider:before {
     font-size: 1.25rem; /* text-xl */
     font-weight: bold; /* font-bold */
     line-height: 1.5; /* leading-6 */
-}
-
-.subname {
-    color: #6b7280; /* text-gray-500 */
-    font-weight: bold; /* font-bold */
-    font-size: 0.875rem; /* text-sm */
+    text-shadow: 0px 0px 10px black;
 }
 
 /* Social media icon content container. */
@@ -3072,8 +3068,8 @@ input:checked + .toggleSwitchSlider:before {
     align-items: center;      /* centraliza os ícones na horizontal */
     gap: 20px;                /* espaço entre os ícones */
     margin: 0;    /* remove empurrões laterais */
-    padding-top: 150;
-    padding-right: 97;
+    padding-top: 120;
+    padding-right: 846;
     width: auto;  /* ajusta à largura dos ícones */
 }
 
@@ -3086,9 +3082,11 @@ input:checked + .toggleSwitchSlider:before {
 /* Container object which wraps an icon to ensure fluid transitions. */
 .mediaContainer {
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: center;
+    align-items: center;
     height: 27px;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 /* Divider bar between the external and internal icons. */
@@ -3258,7 +3256,7 @@ input:checked + .toggleSwitchSlider:before {
     color: #949494;
     font-size: 15px;
     font-weight: 900;
-    text-shadow: 0px 0px 20px #949494;
+    text-shadow: 0px 0px 10px #949494;
     margin-left: 10px;
 }
 
@@ -3455,7 +3453,7 @@ input:checked + .toggleSwitchSlider:before {
     padding-bottom: 0.6rem; /* py-3 */
     padding-left: 3.0rem; /* px-14 */
     padding-right: 3.0rem; /* px-14 */
-    border-radius: 3rem; /* rounded-xl */
+    border-radius: 0.5rem; /* rounded-xl */
     position: absolute; /* absolute */
     top: -4rem; /* -top-12 */
     left: 50%; /* left-1/2 */
@@ -3484,7 +3482,7 @@ input:checked + .toggleSwitchSlider:before {
     padding-bottom: 0.6rem; /* py-3 */
     padding-left: 1.8rem; /* px-14 */
     padding-right: 1.8rem; /* px-14 */
-    border-radius: 3rem; /* rounded-xl */
+    border-radius: 0.5rem; /* rounded-xl */
     position: absolute; /* absolute */
     top: -4rem; /* -top-12 */
     left: 50%; /* left-1/2 */
@@ -4083,6 +4081,7 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateX(-22px);
     /* O efeito FadeIn será herdado automaticamente do app */
 }
 

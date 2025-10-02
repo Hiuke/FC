@@ -17,46 +17,59 @@ const axios = require('axios')
 // Setup Lang
 LangLoader.setupLanguage()
 
-// Setup auto updater.
-function initAutoUpdater(event, data) {
+autoUpdater.logger = require("electron-log")
+autoUpdater.logger.transports.file.level = "info"
 
-    if(data){
-        autoUpdater.allowPrerelease = true
-    } else {
-        // Defaults to true if application version contains prerelease components (e.g. 0.12.1-alpha.1)
-        // autoUpdater.allowPrerelease = true
-    }
-    
-    if(isDev){
-        autoUpdater.autoInstallOnAppQuit = false
-        autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml')
-    }
-    if(process.platform === 'darwin'){
-        autoUpdater.autoDownload = false
-    }
-    autoUpdater.on('update-available', (info) => {
-        event.sender.send('autoUpdateNotification', 'update-available', info)
-    })
-    autoUpdater.on('update-downloaded', (info) => {
-        event.sender.send('autoUpdateNotification', 'update-downloaded', info)
-    })
-    autoUpdater.on('update-not-available', (info) => {
-        event.sender.send('autoUpdateNotification', 'update-not-available', info)
-    })
-    autoUpdater.on('checking-for-update', () => {
-        event.sender.send('autoUpdateNotification', 'checking-for-update')
-    })
-    autoUpdater.on('error', (err) => {
-        event.sender.send('autoUpdateNotification', 'realerror', err)
-    }) 
-}
+// **IMPORTANTE:** Configurar o provedor de atualização.
+autoUpdater.setFeedURL({
+  provider: 'github',
+  owner: 'Hiuke', // SUBSTITUA PELO SEU USUÁRIO/ORGANIZAÇÃO
+  repo: 'FC'      // SUBSTITUA PELO NOME DO SEU REPOSITÓRIO
+})
+
+// Eventos do autoUpdater (no processo principal)
+autoUpdater.on('checking-for-update', () => {
+  if (win) win.webContents.send('autoUpdateNotification', 'checking-for-update')
+})
+
+autoUpdater.on('update-available', (info) => {
+  if (win) win.webContents.send('autoUpdateNotification', 'update-available', info)
+})
+
+autoUpdater.on('update-not-available', (info) => {
+  if (win) win.webContents.send('autoUpdateNotification', 'update-not-available', info)
+})
+
+autoUpdater.on('error', (err) => {
+  console.error('Erro no autoUpdater:', err)
+  if (win) win.webContents.send('autoUpdateNotification', 'realerror', { code: err.message, stack: err.stack })
+})
+
+autoUpdater.on('download-progress', (progressObj) => {
+  if (win) win.webContents.send('autoUpdateNotification', 'download-progress', progressObj)
+})
+
+autoUpdater.on('update-downloaded', (info) => {
+  if (win) win.webContents.send('autoUpdateNotification', 'update-downloaded', info)
+})
 
 // Open channel to listen for update actions.
 ipcMain.on('autoUpdateAction', (event, arg, data) => {
     switch(arg){
         case 'initAutoUpdater':
-            console.log('Initializing auto updater.')
-            initAutoUpdater(event, data)
+            // A lógica aqui permanece a mesma, mas o comentário explica sua nova função.
+            console.log('Initializing auto updater (from renderer).')
+            if(data){
+                autoUpdater.allowPrerelease = true
+            } else {
+                const preRelComp = semver.prerelease(app.getVersion())
+                if(preRelComp != null && preRelComp.length > 0){
+                    autoUpdater.allowPrerelease = true
+                } else {
+                    autoUpdater.allowPrerelease = data
+                }
+            }
+            // Enviar 'ready' de volta para o renderizador.
             event.sender.send('autoUpdateNotification', 'ready')
             break
         case 'checkForUpdate':

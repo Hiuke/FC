@@ -184,7 +184,7 @@ javaDownloadPrepare = "Preparando Download do Java.."
 javaDownloadFailureTitle = "Erro Durante o Download do Java"
 javaDownloadFailureText = "Veja o console (CTRL + Shift + i) para mais detalhes."
 javaRequired = "Java é Necessário<br>para Iniciar"
-javaRequiredMessage = 'Uma instalação válida de Java {major} x64 é necessária para iniciar.<br><br>Por favor, consulte nosso <a href="https://discord.gg/jornadascobblemon">discord</a> para instruções sobre como instalar o Java manualmente.'
+javaRequiredMessage = 'Uma instalação válida de Java {major} x64 é necessária para iniciar.<br><br>Por favor, consulte nosso <a href="https://discord.gg/VWYE7GVhEE">discord</a> para instruções sobre como instalar o Java manualmente.'
 javaRequiredDismiss = "Entendi"
 javaRequiredCancel = "Voltar"
 
@@ -207,7 +207,7 @@ downloadingFiles = "Baixando arquivos.."
 errorDuringFileDownloadTitle = "Erro Durante o Download do Arquivo"
 preparingToLaunch = "Preparando para iniciar.."
 launchingGame = "Iniciando o jogo.."
-launchWrapperNotDownloaded = "O arquivo principal, LaunchWrapper, falhou ao ser baixado corretamente. Como resultado, o jogo não pode ser iniciado.<br><br>Para corrigir este problema, desative temporariamente o seu software antivírus e inicie o jogo novamente.<br><br>Se possível, por favor, <a href=\"https://discord.gg/jornadascobblemon\">entre no nosso discord</a> e informe qual software antivírus você usa. Entraremos em contato com eles e tentaremos resolver a situação."
+launchWrapperNotDownloaded = "O arquivo principal, LaunchWrapper, falhou ao ser baixado corretamente. Como resultado, o jogo não pode ser iniciado.<br><br>Para corrigir este problema, desative temporariamente o seu software antivírus e inicie o jogo novamente.<br><br>Se possível, por favor, <a href=\"https://discord.gg/VWYE7GVhEE\">entre no nosso discord</a> e informe qual software antivírus você usa. Entraremos em contato com eles e tentaremos resolver a situação."
 doneEnjoyServer = "Concluído. Aproveite o servidor!"
 checkConsoleForDetails = "Por favor, verifique o console (CTRL + Shift + i) para mais detalhes."
 
@@ -215,9 +215,9 @@ checkConsoleForDetails = "Por favor, verifique o console (CTRL + Shift + i) para
 checking = "Verificando Notícias"
 
 [js.landing.discord]
-loading = "Entrando na jornada!"
-joining = "Vivendo minha jornada!"
-joined = "Vivendo minha jornada!"
+loading = "Abrindo!"
+joining = "Aberto!"
+joined = "Aberto!"
 
 [js.overlay]
 dismiss = "Fechar"

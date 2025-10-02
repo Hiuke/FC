@@ -47,22 +47,7 @@ if(!isDev){
                 break
             case 'update-available':
                 loggerAutoUpdater.info('New update available', info.version)
-
-                // Definir URLs de download baseados na plataforma
-                let downloadUrl = null
-                if(process.platform === 'win32'){
-                    downloadUrl = `https://github.com/Hiuke/FC/releases/download/${info.version}/FC-setup-${info.version}-x64.exe`
-                } else if(process.platform === 'darwin'){
-                    downloadUrl = `https://github.com/Hiuke/FC/releases/download/${info.version}/FC-setup-${info.version}.dmg`
-                } else if(process.platform === 'linux'){
-                    downloadUrl = `https://github.com/Hiuke/FC/releases/download/${info.version}/FC-setup-${info.version}.AppImage`
-                }
-
-                if(downloadUrl){
-                    info.downloadUrl = downloadUrl
-                    showUpdateUI(info)
-                }
-
+                showUpdateUI(info)
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':

@@ -1,0 +1,9 @@
+directories:
+  output: dist
+  buildResources: build
+publish:
+  - provider: github
+    owner: Hiuke
+    repo: FC
+files: []
+electronVersion: 33.2.0

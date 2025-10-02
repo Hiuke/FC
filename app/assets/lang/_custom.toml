@@ -1,17 +1,18 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "Jornadas Cobblemon"
+title = "Fronteiras Cobblemon"
 
 [ejs.landing]
-mediaYouTubeURL = "https://www.youtube.com/@samusalvador"
-mediaDiscordURL = "https://discord.gg/jornadascobblemon"
+mediaYouTubeURL = "https://www.youtube.com/@FronteirasCobblemon"
+mediaDiscordURL = "https://discord.gg/VWYE7GVhEE"
+websiteURL = "https://www.youtube.com/@FronteirasCobblemon"
 
 [ejs.settings]
-sourceGithubLink = "https://github.com/jornadacobblemon/jc-launcher"
+sourceGithubLink = "https://github.com/dscalzi/HeliosLauncher"
 supportLink = "https://discord.com/channels/1410018704476868618/1410031395732066477"
 
 [ejs.welcome]
-welcomeHeader = "Bem Vindo ao Jornadas Cobblemon"
-welcomeDescription = "A maior Jornada Pokémon da sua vida começa agora!"
+welcomeHeader = "Bem Vindo ao Fronteiras Cobblemon"
+welcomeDescription = "Tenha um bom jogo e aproveite nossa comunidade!"
 welcomeDescCTA = ""
